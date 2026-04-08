@@ -20,7 +20,7 @@ public class ApiApplication {
 	CommandLineRunner run(ArtworkService artworkService) {
 		return args -> {
 			System.out.println("\n--- INICIO DE PRUEBA DE BITPALETTE ---");
-			artworkService.publishArtwork("Retrato_Digital_01.png");
+			artworkService.publishArtwork("Retrato_Digital_01.png", "David Ramirez");
 			System.out.println("--- FIN DE PRUEBA ---\n");
 		};
 	}

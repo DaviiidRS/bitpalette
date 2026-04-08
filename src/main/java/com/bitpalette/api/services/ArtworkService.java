@@ -15,12 +15,12 @@ public class ArtworkService {
         this.eventPublisher = eventPublisher;
     }
 
-    public void publishArtwork(String name) {
+    public void publishArtwork(String name, String artist) {
         // 1. Lógica de guardado
         storageService.upload(name);
 
         // 2. Disparar el patrón Pub-Sub
         System.out.println("[SISTEMA] >> Disparando evento de publicación...");
-        eventPublisher.publishEvent(new ArtworkPublishedEvent(name));
+        eventPublisher.publishEvent(new ArtworkPublishedEvent(name, artist));
     }
 }
